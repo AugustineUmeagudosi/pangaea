@@ -4,7 +4,13 @@
   "description": "A distributed publisher-subscriber App built with PostgreSQL and nodejs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "nodemon index.js",
+    "start": "node index.js",
+    "migrate": "sequelize db:migrate",
+    "migrate:create": "sequelize migration:create --name",
+    "migrate:undo": "sequelize db:migrate:undo",
+    "model:generate": "npx sequelize-cli model:generate --name Subscriber --attributes url:string,topicId:string"
   },
   "repository": {
     "type": "git",
