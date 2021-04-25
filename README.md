@@ -1,4 +1,4 @@
-# pangaea
+# Pangaea
 A distributed subscriber-publisher App built with NodeJs, Express, and PostgreSQL.
 
 # <h3> Installation guides. </h3>
