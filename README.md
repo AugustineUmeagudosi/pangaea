@@ -13,4 +13,4 @@ A distributed subscriber-publisher App built with NodeJs, Express, and PostgreSQ
 # <h3> App dependencies </h3>
 postgres Database and node v12 and above
 
-# <h5> The API documentation is hosted here `https://www.getpostman.com/collections/39945da123c146fa72a6` or `https://documenter.getpostman.com/view/10114803/TzJybFRV` </h5>
+# <h5> The API documentation is hosted here https://www.getpostman.com/collections/39945da123c146fa72a6 or https://documenter.getpostman.com/view/10114803/TzJybFRV </h5>
