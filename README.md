@@ -10,7 +10,7 @@ A distributed subscriber-publisher App built with NodeJs, Express, and PostgreSQ
 6. run `node index.js` or `npm start` to start the app on `localhost:8000` and `localhost:9000` <br>
 
 # App dependencies.
-postgres Database and node v12 and above
+Postgres Database and node v12 and above
 
 # Documentation.
 The API documentation is hosted here https://www.getpostman.com/collections/39945da123c146fa72a6 or https://documenter.getpostman.com/view/10114803/TzJybFRV
