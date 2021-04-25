@@ -8,14 +8,11 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
-      Subscriber.hasMany(models.Topic, { foreignKey: 'topicId', as: 'topic', });
+      Subscriber.hasMany(models.Topic_Subscriber, { foreignKey: 'subscriberId', as: 'subscribers' });
     }
   }
   Subscriber.init({
     url: DataTypes.STRING,
-    topicId: { type: DataTypes.UUID, allowNull: false, foreignKey: true, references: {model: 'Topic'} },
-
   }, {
     sequelize,
     modelName: 'Subscriber',

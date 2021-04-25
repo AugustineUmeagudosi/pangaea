@@ -9,13 +9,13 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Topic.hasMany(models.Subscriber, { foreignKey: 'topicId' });
-      // Topic.hasMany(models.Subscriber, { foreignKey: 'topicId', as: 'topic', });
+      Topic.hasMany(models.Topic_Subscriber, { foreignKey: 'topicId', as: 'topics' });
+      Topic.hasMany(models.Message, { foreignKey: 'topicId', as: 'topicsMessages' });
     }
   }
   Topic.init({
-    topic: DataTypes.STRING,
-    slug: { type: DataTypes.STRING, unique: true }
+    topic: { type: DataTypes.STRING, unique: true }
+    // slug: { type: DataTypes.STRING, unique: true }
   }, {
     sequelize,
     modelName: 'Topic',
