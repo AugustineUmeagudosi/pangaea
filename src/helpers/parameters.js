@@ -1,6 +1,6 @@
 //users
 const topicDetails = [
-    'id', 'topic', 'slug', 'createdAt'
+    'id', 'topic', 'createdAt'
 ],
 
 subscriberDetails = [

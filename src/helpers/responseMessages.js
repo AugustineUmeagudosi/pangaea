@@ -40,6 +40,6 @@ module.exports = {
     },
 
     internalServerError: ( message, res ) => {
-        return res.status(500).json({ status: 'Internal Server error', message: message || 'Something went wrong', data:[] });
+        return res.status(500).json({ status: 'Internal Server error', message: message, data:[] });
     }
 };

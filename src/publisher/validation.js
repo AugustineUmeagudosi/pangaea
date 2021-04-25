@@ -2,7 +2,7 @@ const Joi = require('@hapi/joi');
 
 function createTopic(topic) {
   const schema = Joi.object().keys({
-    name: Joi.string().required()
+    topic: Joi.string().required()
   });
 
   return schema.validate(topic);
