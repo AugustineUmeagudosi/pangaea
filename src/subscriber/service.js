@@ -9,7 +9,7 @@ const _ = require('lodash'),
 
 
 module.exports = {
-    create: async (req, res) => {
-        
+    subscribe: async (req, res) => {
+        return res.send(`${req.params.topic} subscribed successfully!`);
     }
 };

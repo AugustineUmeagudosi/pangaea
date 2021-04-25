@@ -5,11 +5,15 @@ const _ = require('lodash'),
     // variables = require('../helpers/parameters'),
     // helpers = require('../helpers/utilities'),
     // mailService = require('../helpers/mailServices'),
-    { v4: uuidv4 } = require('uuid');
+{ v4: uuidv4 } = require('uuid');
 
 
 module.exports = {
-    create: async (req, res) => {
-        
+    createTopic: async (req, res) => {
+        return res.send('Topic published!');
+    },
+
+    publishMessage: async (req, res) => { 
+        return res.send(`${req.params.topic} message published successfully!`);
     }
 };

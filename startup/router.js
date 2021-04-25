@@ -14,5 +14,7 @@ module.exports = function (publisher, subscriber) {
     ));
 
     publisher.use('/publish', publisherRouter);
-    subscriber.use('/susbscribe', subscriberRouter);
+    publisher.use('/subscribe', subscriberRouter);
+
+    // subscriber.use('/subscribe', subscriberRouter);
 };

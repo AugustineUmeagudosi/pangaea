@@ -3,6 +3,6 @@ const router = express.Router();
 const subscriberService = require('./service');
 
 // create organization
-router.post( '/',  subscriberService.create );
+router.post( '/:topic',  subscriberService.subscribe );
 
 module.exports = router;
