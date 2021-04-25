@@ -1,22 +1,22 @@
 const Joi = require('@hapi/joi');
 
-function createOrganization(organization) {
+function createTopic(topic) {
   const schema = Joi.object().keys({
     name: Joi.string().required()
   });
 
-  return schema.validate(organization);
+  return schema.validate(topic);
 }
 
-function invitations(organization) {
+function publishMessage(message) {
   const schema = Joi.object().keys({
-    organizationId: Joi.string().required(),
-    invitees: Joi.array().required()
+    topicId: Joi.string().required(),
+    message: Joi.object().required()
   });
 
-  return schema.validate(organization);
+  return schema.validate(message);
 }
 
 module.exports = {
-  createOrganization, invitations
+  createTopic, publishMessage
 };

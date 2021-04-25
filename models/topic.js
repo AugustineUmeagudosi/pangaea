@@ -9,7 +9,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Topic.hasMany(models.Subscriber, { foreignKey: 'topicId', as: 'topic', });
+      Topic.hasMany(models.Subscriber, { foreignKey: 'topicId' });
+      // Topic.hasMany(models.Subscriber, { foreignKey: 'topicId', as: 'topic', });
     }
   }
   Topic.init({
