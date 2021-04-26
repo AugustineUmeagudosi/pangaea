@@ -15,7 +15,7 @@ module.exports = {
 
         const slug = helpers.stringSanitizer(req.params.topic);
         const topic = await dbQueries.findTopic(slug);
-        if(!topic) return responseMessages.notFound('The selected topic was not found.', res);
+        if(!topic) return responseMessages.badRequest('The selected topic was not found.', res);
         
         const data = {};
         data.url = req.body.url;
@@ -36,7 +36,7 @@ module.exports = {
 
         // create topic_subscription
         createNewSubscription(topic.id, subscriber.id);
-        return responseMessages.created('Subscrription created successfully', data, res);
+        return responseMessages.created(`You have successfully subscribed to ${data.topic}.`, data, res);
     },
 };
 
