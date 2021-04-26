@@ -1,14 +1,11 @@
 const express  = require('express');
 require('dotenv').config();
 const port = process.env.PORT;
+const app = express();
 
-const publisher = express();
-const subscriber = express();
-
-require('./startup/securityPackages')(publisher, subscriber);
+require('./startup/securityPackages')(app);
 require('./startup/db_connection')();
-require('./startup/router')(publisher, subscriber);
-require('./startup/pageNotFound')(publisher, subscriber);
+require('./startup/router')(app);
+require('./startup/pageNotFound')(app);
 
-publisher.listen(process.env.PUBLISHER_PORT, () => console.log(`Publisher server listening on port ${process.env.PUBLISHER_PORT}...`));
-subscriber.listen(process.env.SUBSCRIBERS_PORT, () => console.log(`Subscriber server listening on port ${process.env.SUBSCRIBERS_PORT}...`));
+app.listen(port, () => console.log(`App listening on port ${port}...`));

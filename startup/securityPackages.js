@@ -10,13 +10,9 @@ const limiter = rateLimit({
 });
 
 
-module.exports= function (publisher, subscriber) {
-    publisher.use(cors());
-    subscriber.use(cors());
-    publisher.use(limiter);
-    subscriber.use(limiter);
-    publisher.use(helmet());
-    subscriber.use(helmet());
-    publisher.use(compression());
-    subscriber.use(compression());
+module.exports= function (app) {
+    app.use(cors());
+    app.use(limiter);
+    app.use(helmet());
+    app.use(compression());
 };

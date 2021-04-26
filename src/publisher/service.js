@@ -4,7 +4,6 @@ const _ = require('lodash'),
     responseMessages = require('../helpers/responseMessages'),
     variables = require('../helpers/parameters'),
     helpers = require('../helpers/subroutines'),
-    fetch = require('node-fetch'),
 { v4: uuidv4 } = require('uuid');
 const { notify } = require('./router');
 
@@ -50,8 +49,8 @@ module.exports = {
         // return res.send(typeof subscribers);
         // subscribers = JSON.stringify(subscribers);
         // notify all subscribers
-        subscribers.foreach(async(subscriber) => {
-            helpers.sendBroadcastMessage(subscriber.subscriber.url, data);
+        subscribers.forEach(async(subscriber) => {
+            await helpers.sendBroadcastMessage(subscriber.subscriber.url, data);
         });
 
         return responseMessages.created('Message broadcasted to all subscribers!', data, res);
