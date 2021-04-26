@@ -45,10 +45,8 @@ module.exports = {
         data.topic = topic.topic;
         data.data = req.body.data;
 
+        // broadcast the message to all subscribers
         let subscribers = await dbQueries.fetchSubscribers(topic.id);
-        // return res.send(typeof subscribers);
-        // subscribers = JSON.stringify(subscribers);
-        // notify all subscribers
         subscribers.forEach(async(subscriber) => {
             await helpers.sendBroadcastMessage(subscriber.subscriber.url, data);
         });

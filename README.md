@@ -14,3 +14,5 @@ Postgres Database and node v12 and above
 
 # Documentation.
 The API documentation is hosted here https://www.getpostman.com/collections/39945da123c146fa72a6 or https://documenter.getpostman.com/view/10114803/TzJybFRV
+
+It can also be found in `./API_documentation.json`

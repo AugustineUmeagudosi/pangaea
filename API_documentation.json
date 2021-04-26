@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "9f968b50-d37f-4763-88d5-14579ebc01da",
+		"name": "Pangaea",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create topic",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"topic\": \"topic3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/publish/createTopic",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"publish",
+						"createTopic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subscribe to a topic",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"url\": \"http://mysubscriber.test1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/subscribe/topic1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"subscribe",
+						"topic1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Publish message",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": {\r\n        \"wahala\": \"I be like bicycle\",\r\n        \"message\": \"I just want to disturb\",\r\n        \"data\": {\r\n            \"payload\": [\"many\", \"are\", \"called\"]\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/publish/topic1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"publish",
+						"topic1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
