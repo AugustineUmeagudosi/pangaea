@@ -47,6 +47,8 @@ module.exports = {
 
         // broadcast the message to all subscribers
         let subscribers = await dbQueries.fetchSubscribers(topic.id);
+        if(susbscribers.length == 0) return responseMessages.created('Message published but no subscribers found', data, res);
+        
         subscribers.forEach(async(subscriber) => {
             await helpers.sendBroadcastMessage(subscriber.subscriber.url, data);
         });
