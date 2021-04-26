@@ -1,5 +1,5 @@
 # Pangaea
-A distributed subscriber-publisher App built with NodeJs, Express, and PostgreSQL.
+A HTTP notification system built with NodeJs, Express, and PostgreSQL.
 
 # Installation guides.
 1. clone.<br>

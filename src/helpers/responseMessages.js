@@ -41,5 +41,9 @@ module.exports = {
 
     internalServerError: ( message, res ) => {
         return res.status(500).json({ status: 'Internal Server error', message: message, data:[] });
+    },
+
+    globalErrorReporter: ( message, status, res ) => {
+        return res.status(status).json({ status: 'Internal Server error', message: message });
     }
 };
