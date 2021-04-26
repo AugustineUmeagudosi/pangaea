@@ -10,7 +10,7 @@
     "migrate": "sequelize db:migrate",
     "migrate:create": "sequelize migration:create --name",
     "migrate:undo": "sequelize db:migrate:undo",
-    "model:generate": "npx sequelize-cli model:generate --name message --attributes message:string"
+    "model:generate": "npx sequelize-cli model:generate --name message --attributes data:string"
   },
   "repository": {
     "type": "git",

@@ -8,7 +8,7 @@ subscriberDetails = [
 ];
 
 messageDetails = [
-    'id', 'topicId', 'message', 'invitationCode'
+    'id', 'topicId', 'data'
 ];
 
 module.exports = {

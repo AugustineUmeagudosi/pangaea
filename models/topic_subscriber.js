@@ -1,23 +1,23 @@
 const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-  class Topic_Subscriber extends Model {
+  class topic_subscriber extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Topic_Subscriber.belongsTo(models.Topic, { foreignKey: 'topicId', as: 'topics' });
-      Topic_Subscriber.belongsTo(models.Subscriber, { foreignKey: 'subscriberId', as: 'subscribers' });
+      topic_subscriber.belongsTo(models.topic, { foreignKey: 'topicId', as: 'topics' });
+      topic_subscriber.belongsTo(models.subscriber, { foreignKey: 'subscriberId', as: 'subscriber' });
     }
   }
-  Topic_Subscriber.init({
-    topicId: { type: DataTypes.UUID, allowNull: false, foreignKey: true, references: {model: 'topics'} },
-    subscriberId: { type: DataTypes.UUID, allowNull: false, foreignKey: true, references: {model: 'subscribers'} }
+  topic_subscriber.init({
+    topicId: { type: DataTypes.UUID, allowNull: false, foreignKey: true, references: {model: 'topic'} },
+    subscriberId: { type: DataTypes.UUID, allowNull: false, foreignKey: true, references: {model: 'subscriber'} }
   }, {
     sequelize,
-    modelName: 'Topic_Subscriber',
+    modelName: 'topic_subscriber',
   });
-  return Topic_Subscriber;
+  return topic_subscriber;
 };

@@ -1,24 +1,23 @@
 const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-  class Topic extends Model {
+  class topic extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
-      Topic.hasMany(models.Topic_Subscriber, { foreignKey: 'topicId', as: 'topics' });
-      Topic.hasMany(models.Message, { foreignKey: 'topicId', as: 'topicsMessages' });
+      topic.hasMany(models.topic_subscriber, { foreignKey: 'topicId', as: 'topics' });
+      topic.hasMany(models.message, { foreignKey: 'topicId', as: 'topicMessages' });
     }
   }
-  Topic.init({
+  topic.init({
     topic: { type: DataTypes.STRING },
     slug: { type: DataTypes.STRING, unique: true }
   }, {
     sequelize,
-    modelName: 'Topic',
+    modelName: 'topic',
   });
-  return Topic;
+  return topic;
 };

@@ -1,16 +1,3 @@
-// const express = require('express');
-
-// const publisher = express();
-// const subscriber = express();
-
-// posts.listen(9000, () => {
-//   console.log(`publisher listening on port 9000`);
-// });
-
-// subscribers.listen(8000, () => {
-//   console.log(`Subscribers listening on port  8000`);   
-// });
-
 const express  = require('express');
 require('dotenv').config();
 const port = process.env.PORT;

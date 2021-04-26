@@ -10,8 +10,7 @@ function createTopic(topic) {
 
 function publishMessage(message) {
   const schema = Joi.object().keys({
-    topicId: Joi.string().required(),
-    message: Joi.object().required()
+    data: Joi.object().required()
   });
 
   return schema.validate(message);
