@@ -4,10 +4,10 @@ A HTTP notification system built with NodeJs, Express, and PostgreSQL.
 # Installation guides.
 1. clone.<br>
 2. run `npm install`<br>
-3. rename `./.env.example` file to `./.env` and edit it (see the comments inside the file for guide on the fields to edit), <br>
+3. rename `./.env.example` file to `./.env` and edit it (see the comments inside the file for guide on the fields to edit), Also, open `./config/confiq.json` and edit the fields under `development` accordingly <br>
 4. Start your Postgres and create a database named `pangaea` on you postgres DB.
 5. run `sequelize db:migrate` (to migrate the database tables), and `sequelize db:seed:all` (to seed topics to the topic table) <br>
-6. run `node index.js` or `npm start` to start the app on `localhost:8000` and `localhost:9000` <br>
+6. run `node index.js` or `npm start` to start the app on `localhost:8000` <br>
 
 # App dependencies.
 Postgres Database and node v12 and above
