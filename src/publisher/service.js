@@ -5,8 +5,6 @@ const _ = require('lodash'),
     variables = require('../helpers/parameters'),
     helpers = require('../helpers/subroutines'),
 { v4: uuidv4 } = require('uuid');
-const { notify } = require('./router');
-
 
 module.exports = {
     createTopic: async (req, res) => {
@@ -23,7 +21,7 @@ module.exports = {
         const response = await dbQueries.createTopic(topic);
 
         const data = _.pick(response, variables.topicDetails);
-        return responseMessages.created('Topic created!', data, res);
+        return res.status(201).send(data);
     },
 
     publishMessage: async (req, res) => { 
@@ -53,6 +51,6 @@ module.exports = {
             await helpers.sendBroadcastMessage(subscriber.subscriber.url, data);
         });
 
-        return responseMessages.created('Message broadcasted to all subscribers!', data, res);
+        return res.status(201).send(data);
     }
 };

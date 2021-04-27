@@ -32,11 +32,12 @@ module.exports = {
         }
 
         const subscriptionExists = await dbQueries.findSubscription(topic.id, subscriber.id);
-        if(subscriptionExists) return responseMessages.success('You have already subscribed to this topic', data, res);
+        if(subscriptionExists) return res.status(200).send({message: 'You have already subscribed to this topic', data: data});
 
         // create topic_subscription
         createNewSubscription(topic.id, subscriber.id);
-        return responseMessages.created(`You have successfully subscribed to ${data.topic}.`, data, res);
+        return res.status(201).send(data);
+        // return responseMessages.created(`You have successfully subscribed to ${data.topic}.`, data, res);
     },
 };
 
